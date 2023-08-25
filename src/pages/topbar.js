@@ -1,10 +1,6 @@
-import two from 'public/6.png';
+import logo from 'public/logo.png';
 import search from 'public/search.png';
 import user from 'public/profile-user.png';
-
-
-import {Parallax} from "@react-spring/parallax";
-import ParallaxHome from "@/pages/parallax";
 import {useState} from "react";
 
 export default function Topbar() {
@@ -16,10 +12,10 @@ export default function Topbar() {
     return (
         <nav className="p-2 md:py-9 md:px-6 bg-transparent w-full flex relative justify-between items-center mx-auto h-10">
             <a href="https://www.w3schools.com" target="_blank">
-                <img className="w-3/12" src={two.src}></img>
+                <img className="w-3/12" src={logo.src}></img>
             </a>
             <div className="flex flex-row h-10">
-                <img className="pe-3" onClick={toggleSearch} src={search.src}></img>
+                <img className="pe-3 h-cover" onClick={toggleSearch} src={search.src}></img>
                 <form className={searchOpen ? "pe-2" : "hidden pe-2"}>
                     <div
                         class="h-10 flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-red-700	 sm:max-w-md">
