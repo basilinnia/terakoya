@@ -8,10 +8,10 @@ export default function Options() {
   useEffect(() => {
     const calculatePaddingTop = () => {
     const windowHeight = window.innerHeight;
-    if (window.innerWidth > 903 && window.innerHeight > 634) {
-      setPaddingTop(`${windowHeight * (11 / 20)}px`);
+    if (window.innerWidth > 768 || window.innerHeight > 634) {
+      setPaddingTop(`${windowHeight * (12 / 20)}px`);
     } else {
-      setPaddingTop(`${windowHeight * (3 / 5)}px`);
+      setPaddingTop(`${windowHeight * (4 / 10)}px`);
     }
   };
 
@@ -26,7 +26,7 @@ export default function Options() {
     <nav style={{ paddingTop }}>
       {options.map((option, i) => (
         <div key={i} className="display flex items-center align-center">
-          <img className="h-5 ps-5 pe-3.5" src={arrow.src} alt="Arrow" />
+          <img className="h-5 ps-7 pe-3.5" src={arrow.src} alt="Arrow" />
           <span className="option">{option}</span>
         </div>
       ))}

@@ -1,55 +1,25 @@
-import { useRef } from 'react';
-import { Parallax, ParallaxLayer } from '@react-spring/parallax';
-import two from 'public/parallax2.png';
-import one from 'public/parallax1.svg';
-import three from 'public/parallax3.png';
-import four from 'public/parallax4.png';
 import Options from "@/pages/menu";
+import React from 'react';
+import image1 from 'public/parallax1.png';
+import image2 from 'public/parallax2.png';
+import image3 from 'public/parallax3.png';
+import image4 from 'public/parallax4.png';
+import image5 from 'public/parallax5.png';
+
 export default function ParallaxHome() {
-  const ref = useRef();
-  return (
-      <div>
-     <Parallax pages={4} ref={ref}>
-        <ParallaxLayer
-          offset={0}
-          speed={1.3}
-          factor={1}
-          style={{
-            backgroundImage: `url(${one.src})`,
-            backgroundSize: 'cover',
-          }}
-        ><Options></Options></ParallaxLayer>
-
-        <ParallaxLayer
-          offset={1}
-          speed={1}
-          factor={1}
-          style={{
-            backgroundImage: `url(${two.src})`,
-            backgroundSize: 'cover',
-          }}
-        ></ParallaxLayer>
-
-         <ParallaxLayer
-          offset={2}
-          speed={1}
-          factor={1}
-          style={{
-            backgroundImage: `url(${three.src})`,
-            backgroundSize: 'cover',
-          }}
-        ></ParallaxLayer>
-
-                 <ParallaxLayer
-          offset={3}
-          speed={1}
-          factor={1}
-          style={{
-            backgroundImage: `url(${four.src})`,
-            backgroundSize: 'cover',
-          }}
-        ></ParallaxLayer>
-      </Parallax>
-    </div>
-  );
+    return (
+        <div className="parallax relative overflow-hidden">
+            <div className="parallax-element" style={{ backgroundImage: `url(${image1.src})` }}>
+                <Options />
+            </div>
+             <div className="parallax-element" style={{ backgroundImage: `url(${image2.src})` }}>
+            </div>
+             <div className="parallax-element" style={{ backgroundImage: `url(${image3.src})` }}>
+            </div>
+             <div className="parallax-element" style={{ backgroundImage: `url(${image4.src})` }}>
+            </div>
+             <div className="parallax-element" style={{ backgroundImage: `url(${image5.src})` }}>
+            </div>
+        </div>
+    );
 }

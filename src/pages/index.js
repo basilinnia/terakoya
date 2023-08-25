@@ -5,9 +5,8 @@ import Options from "@/pages/menu";
 export default function Home() {
   return (
       <main>
-          <ParallaxHome/>
           <Topbar/>
-
+         <ParallaxHome/>
       </main>
   );
 }
