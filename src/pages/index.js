@@ -1,11 +1,10 @@
-import ParallaxHome from "@/pages/parallax";
-import Topbar from "@/pages/topbar";
-import Options from "@/pages/menu";
+import ParallaxHome from "@/pages/components/Parallax";
+import TopBar from "@/pages/components/Topbar";
 
 export default function Home() {
   return (
       <main>
-          <Topbar/>
+          <TopBar/>
          <ParallaxHome/>
       </main>
   );
