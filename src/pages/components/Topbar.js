@@ -5,10 +5,10 @@ import logImage from 'public/user.png';
 import userPic from 'public/profile-pictures/pp1.PNG';
 
 import {useContext, useEffect, useRef, useState} from "react";
-import {handleSignIn, handleSignOut} from "@/pages/firebase/auth";
+import {handleSignIn, handleSignOut} from "@/firebase/auth";
 import {UserContext} from "@/pages/_app";
 import ChangeProfilePictureModal, {pictureList} from "../../pages/components/UserPictureModal";
-import {auth, firestore} from "@/pages/firebase/config";
+import {auth, firestore} from "@/firebase/config";
 
 export default function TopBar() {
     const [searchOpen, setSearchOpen] = useState(false);

@@ -12,7 +12,7 @@ import pp10 from 'public/profile-pictures/pp10.PNG';
 import pp11 from 'public/profile-pictures/pp11.PNG';
 import pp12 from 'public/profile-pictures/pp12.PNG';
 import {UserContext} from "@/pages/_app";
-import {auth, firestore} from "@/pages/firebase/config";
+import {auth, firestore} from "@/firebase/config";
 
 
 export const pictureList = [pp1.src, pp2.src, pp3.src, pp4.src, pp5.src, pp6.src, pp7.src, pp8.src, pp9.src, pp10.src, pp11.src, pp12.src]
