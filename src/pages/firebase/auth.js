@@ -21,7 +21,7 @@ export function handleSignIn() {
             .set({
               pictureIndex: 0, // Profile picture index
               dictionary: [], // No pledge yet
-              savedArticles: [] //No articles saved
+              savedArticles: [] //No Articles.jsx saved
             })
             .catch(console.error);
         })

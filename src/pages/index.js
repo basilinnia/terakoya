@@ -5,7 +5,7 @@ export default function Home() {
   return (
       <main>
           <TopBar/>
-         <ParallaxHome/>
+          <ParallaxHome/>
       </main>
   );
 }

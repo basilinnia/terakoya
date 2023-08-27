@@ -5,7 +5,6 @@ import { auth } from './firebase/config';
 
 
 export const UserContext = createContext();
-
 export default function App({Component, pageProps}) {
     const [user, setUser] = useState(auth.currentUser);
 

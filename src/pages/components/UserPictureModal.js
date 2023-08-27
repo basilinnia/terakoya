@@ -47,8 +47,9 @@ const ChangeProfilePictureModal = () => {
         <dialog id="changeProfilePictureModal" className="rounded-xl modal w-3/6 h-1/2">
             <form method="dialog" className="modal-box">
                 <h3 className="font-bold p-3 text-xl">Change Profile Picture</h3>
-                <p className="pb-3 px-3 text-gray-600">Refresh after click on change</p>
-                <div className="flex flex-row flex-wrap items-center">
+                {/* eslint-disable-next-line react/no-unescaped-entities */}
+                <p className="pb-3 px-3 font-thin text-gray-600">If didn't change, refresh after click on change</p>
+                <div className="flex flex-row flex-wrap sm:justify-normal  justify-center items-center">
                     {pictureList.map((pict, i) => (
                         <a key={i} href="#"
                            className="mx-2 h-24 w-24 mb-2 focus:outline-none focus:ring focus:ring-violet-300">
