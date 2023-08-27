@@ -1,4 +1,4 @@
-import Options from "@/pages/components/Options";
+import Options from "../../pages/components/Options";
 import React from 'react';
 import image1 from 'public/parallax1.png';
 import image2 from 'public/parallax2.png';
