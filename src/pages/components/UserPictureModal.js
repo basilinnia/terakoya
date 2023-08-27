@@ -17,44 +17,44 @@ import {auth, firestore} from "@/pages/firebase/config";
 
 export const pictureList = [pp1.src, pp2.src, pp3.src, pp4.src, pp5.src, pp6.src, pp7.src, pp8.src, pp9.src, pp10.src, pp11.src, pp12.src]
 const ChangeProfilePictureModal = () => {
-  const [currentPictureIndex, setCurrentPictureIndex] = useState(null);
-  const user = useContext(UserContext);
+    const [currentPictureIndex, setCurrentPictureIndex] = useState(null);
+    const user = useContext(UserContext);
 
-  useEffect(() => {
-    if (user) {
-      const userRef = firestore.collection('users').doc(user.uid);
-      userRef.get().then((docSnapshot) => {
-        if (!docSnapshot.exists) {
-            userRef.set({
-                id: user.uid,
-                name: user.displayName,
-                email: user.email,
-                pictureIndex: 0,
+    useEffect(() => {
+        if (user) {
+            const userRef = firestore.collection('users').doc(user.uid);
+            userRef.get().then((docSnapshot) => {
+                if (!docSnapshot.exists) {
+                    userRef.set({
+                        id: user.uid,
+                        name: user.displayName,
+                        email: user.email,
+                        pictureIndex: 0,
+                    });
+                }
+                setCurrentPictureIndex(docSnapshot.get("pictureIndex"));
             });
         }
-        setCurrentPictureIndex(docSnapshot.get("pictureIndex"));
-      });
-    }
-  }, [user]);
+    }, [user]);
 
-  const changePictureIndex = () => {
-    if (user) {
-      const userRef = firestore.collection('users').doc(user.uid); // Define userRef here
-      userRef.update({ pictureIndex: currentPictureIndex });
-    }
-  };
+    const changePictureIndex = () => {
+        if (user) {
+            const userRef = firestore.collection('users').doc(user.uid); // Define userRef here
+            userRef.update({pictureIndex: currentPictureIndex});
+        }
+    };
     return (
         <dialog id="changeProfilePictureModal" className="rounded-xl modal w-3/6 h-1/2">
             <form method="dialog" className="modal-box">
                 <h3 className="font-bold p-3 text-xl">Change Profile Picture</h3>
                 <p className="pb-3 px-3 text-gray-600">Refresh after click on change</p>
                 <div className="flex flex-row flex-wrap items-center">
-             {pictureList.map((pict, i) => (
-    <a key={i} href="#"
-       className="mx-2 h-24 w-24 mb-2 focus:outline-none focus:ring focus:ring-violet-300">
-        <img onClick={() => setCurrentPictureIndex(i)} src={pict} alt="picture"/>
-    </a>
-))}
+                    {pictureList.map((pict, i) => (
+                        <a key={i} href="#"
+                           className="mx-2 h-24 w-24 mb-2 focus:outline-none focus:ring focus:ring-violet-300">
+                            <img onClick={() => setCurrentPictureIndex(i)} src={pict} alt="picture"/>
+                        </a>
+                    ))}
 
                 </div>
                 <div className="flex flex-row justify-end modal-action">
